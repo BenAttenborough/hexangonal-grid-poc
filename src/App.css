@@ -1,5 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  padding: 3rem;
 }
 
 .App-logo {
@@ -31,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.hex{
+	grid-column-end: span 2;
+	width: 40px;
+	height: 71px;
+	/* background-color: #282c34; */
+	background-color: red;
+	position: relative;
+	display: inline-block;
+	transform: rotate(90deg);
+	margin-right: 34px
+}
+
+.hex:before, .hex:after {
+	position: absolute;
+	width: inherit; height: inherit;
+	border-radius: inherit;
+	background: inherit;
+	content: '';
+}
+
+.hex:before {
+	transform: rotate(60deg);
+	right: 0;
+  }
+
+  .hex:after {
+	transform: rotate(-60deg);
+	right: 0;
+  }
+
+  .hex:hover {
+	background: #F58787;
+	cursor: pointer;
+  }
+
+  .board {
+	  display: grid;
+	  grid-template-columns: repeat(12, 37px);
+	  grid-template-rows: repeat(3, 64px);
+  }
